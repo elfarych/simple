@@ -6,6 +6,7 @@ class DocumentsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.SellerDocument
+        fields = '__all__'
 
 
 class SellerSerializer(serializers.ModelSerializer):

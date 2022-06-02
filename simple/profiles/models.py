@@ -39,7 +39,7 @@ class SellerDocument(models.Model):
 
 class Buyer(models.Model):
     user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True, blank=True)
-    user_name = models.CharField(null=True, blank=True, max_length=255)
+    name = models.CharField(null=True, blank=True, max_length=255)
     address = models.TextField(null=True, blank=True, max_length=255)
     phone_number = models.CharField(null=True, blank=True, max_length=255)
     email = models.EmailField(null=True, blank=True)
@@ -50,7 +50,7 @@ class Buyer(models.Model):
     update = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.company_name or self.pk
+        return self.name or self.pk
 
     class Meta:
         ordering = ('-date',)
