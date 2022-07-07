@@ -40,7 +40,7 @@ class CreateSellerDocumentView(generics.CreateAPIView):
     permission_classes = [IsAuthenticated]
 
 
-class DeleteSellerDocumentView(generics.UpdateAPIView):
+class DeleteSellerDocumentView(generics.DestroyAPIView):
     # Обновление документа продавца
     serializer_class = serializers.DocumentsSerializer
     permission_classes = [IsAuthenticated]
@@ -60,7 +60,7 @@ class BuyerMeView(generics.ListAPIView):
 
 
 class CreateBuyerView(generics.CreateAPIView):
-    # Создание нового покупателя. user = user, который иницирует запрос
+    # Создание нового покупателя. user = user, который иницирует з апрос
     queryset = models.Buyer.objects.all()
     serializer_class = serializers.BuyerSerializer
 
